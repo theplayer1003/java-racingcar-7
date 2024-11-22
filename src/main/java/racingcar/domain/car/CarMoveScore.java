@@ -13,6 +13,11 @@ public class CarMoveScore implements Comparable<CarMoveScore> {
         this.moveScore = moveScore;
     }
 
+    public CarMoveScore addMoveScore(CarMoveScore other) {
+        return new CarMoveScore((this.moveScore + other.moveScore));
+    }
+
+
     @Override
     public int hashCode() {
         return Integer.hashCode(moveScore);
