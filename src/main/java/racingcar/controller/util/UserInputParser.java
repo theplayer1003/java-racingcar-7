@@ -1,4 +1,4 @@
-package racingcar.io;
+package racingcar.controller.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
