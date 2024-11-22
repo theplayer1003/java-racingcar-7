@@ -3,7 +3,7 @@ package racingcar.domain.car;
 import racingcar.domain.action.ActionPolicy;
 
 public class Car {
-    private final CarMoveScore score;
+    private CarMoveScore score;
     private final CarName name;
     private final ActionPolicy actionPolicy;
 
@@ -18,6 +18,6 @@ public class Car {
     }
 
     public void updateMoveScore() {
-        score.addMoveScore(actionPolicy.moveCar(this));
+        score = score.addMoveScore(actionPolicy.moveCar(this));
     }
 }
