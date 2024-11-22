@@ -8,9 +8,9 @@ public class Car {
     private final CarName name;
     private final ActionPolicy actionPolicy;
 
-    public Car(CarMoveScore score, CarName name, ActionPolicy actionPolicy) {
-        this.score = score;
+    public Car(CarName name, CarMoveScore score, ActionPolicy actionPolicy) {
         this.name = name;
+        this.score = score;
         this.actionPolicy = actionPolicy;
     }
 
@@ -23,6 +23,6 @@ public class Car {
     }
 
     public void getNameAndScore(Map<String, String> NameAndScore) {
-        NameAndScore.put(name.toString(),score.toString());
+        NameAndScore.put(name.toString(), score.toString());
     }
 }
