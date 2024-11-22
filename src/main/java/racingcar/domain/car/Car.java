@@ -1,5 +1,6 @@
 package racingcar.domain.car;
 
+import java.util.Map;
 import racingcar.domain.action.ActionPolicy;
 
 public class Car {
@@ -19,5 +20,9 @@ public class Car {
 
     public void updateMoveScore() {
         score = score.addMoveScore(actionPolicy.moveCar(this));
+    }
+
+    public void getNameAndScore(Map<String, String> NameAndScore) {
+        NameAndScore.put(name.toString(),score.toString());
     }
 }
