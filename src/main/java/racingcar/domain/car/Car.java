@@ -1,5 +1,7 @@
 package racingcar.domain.car;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import racingcar.domain.action.ActionPolicy;
 
@@ -24,5 +26,21 @@ public class Car {
 
     public void getNameAndScore(Map<String, String> NameAndScore) {
         NameAndScore.put(name.toString(), score.toString());
+    }
+
+    public CarMoveScore compareForHighScore(CarMoveScore otherScore) {
+        if (score.compareTo(otherScore) >= 0) {
+            return otherScore;
+        }
+
+        return this.score;
+    }
+
+    public CarName findHighScoreCarName(CarMoveScore highScore) {
+        if (score.compareTo(highScore) == 0) {
+            return name;
+        }
+
+        return null;
     }
 }
