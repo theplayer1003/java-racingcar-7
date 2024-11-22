@@ -10,6 +10,11 @@ public class CarName {
         this.carName = carName;
     }
 
+    @Override
+    public String toString() {
+        return carName;
+    }
+
     private void isNotContainWhitespace(String carName) {
         if (carName.contains(" ")) {
             throw new IllegalArgumentException("자동차 이름에 공백이 들어갈 수 없습니다.");

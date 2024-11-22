@@ -17,6 +17,10 @@ public class CarMoveScore implements Comparable<CarMoveScore> {
         return new CarMoveScore((this.moveScore + other.moveScore));
     }
 
+    @Override
+    public String toString() {
+        return Integer.toString(moveScore);
+    }
 
     @Override
     public int hashCode() {
