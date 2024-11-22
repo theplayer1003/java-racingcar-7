@@ -22,6 +22,7 @@ public class Controller {
             OutputHandler.printRoundResult(serviceHandler.getResult());
         }
 
-
+        List<String> winners = serviceHandler.getWinners();
+        OutputHandler.printWinners(winners);
     }
 }

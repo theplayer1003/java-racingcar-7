@@ -30,10 +30,10 @@ public class Car {
 
     public CarMoveScore compareForHighScore(CarMoveScore otherScore) {
         if (score.compareTo(otherScore) >= 0) {
-            return otherScore;
+            return score;
         }
 
-        return this.score;
+        return otherScore;
     }
 
     public CarName findHighScoreCarName(CarMoveScore highScore) {
