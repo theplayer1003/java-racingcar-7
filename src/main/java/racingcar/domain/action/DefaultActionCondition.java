@@ -7,7 +7,7 @@ public class DefaultActionCondition implements ActionCondition {
 
     @Override
     public boolean isSatisfiedBy(Car car) {
-        if (car.getRandomNumber() > MOVE_THRESHOLD) {
+        if (car.getRandomNumber() >= MOVE_THRESHOLD) {
             return true;
         }
         return false;

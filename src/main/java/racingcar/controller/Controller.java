@@ -9,20 +9,38 @@ import racingcar.io.InputHandler;
 import racingcar.io.OutputHandler;
 
 public class Controller {
-    public void run() {
-        String userInput = InputHandler.getCarNames();
-        List<String> carNames = UserInputParser.parseCarName(userInput);
+    private final CarFactory carFactory = new CarFactory();
 
-        CarFactory carFactory = new CarFactory();
+    public void run() {
+        List<String> carNames = makeCarNames();
+
         ServiceHandler serviceHandler = new ServiceHandler(carNames, carFactory);
 
-        String round = InputHandler.getRoundNumber();
-        for (int i = 0; i < Integer.parseInt(round); i++) {
-            serviceHandler.moveSequence();
-            OutputHandler.printRoundResult(serviceHandler.getResult());
+        int round = getRoundNumber();
+        for (int i = 0; i < round; i++) {
+            playOneRound(serviceHandler);
         }
 
+        printFinalResult(serviceHandler);
+    }
+
+    private void printFinalResult(ServiceHandler serviceHandler) {
         List<String> winners = serviceHandler.getWinners();
         OutputHandler.printWinners(winners);
+    }
+
+    private void playOneRound(ServiceHandler serviceHandler) {
+        serviceHandler.moveSequence();
+        OutputHandler.printRoundResult(serviceHandler.getResult());
+    }
+
+    private int getRoundNumber() {
+        String round = InputHandler.getRoundNumber();
+        return Integer.parseInt(round);
+    }
+
+    private List<String> makeCarNames() {
+        String userInput = InputHandler.getCarNames();
+        return UserInputParser.parseCarName(userInput);
     }
 }
