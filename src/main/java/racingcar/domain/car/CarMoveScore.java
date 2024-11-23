@@ -2,7 +2,6 @@ package racingcar.domain.car;
 
 public class CarMoveScore implements Comparable<CarMoveScore> {
     private static final int INIT_SCORE = 0;
-
     private final int moveScore;
 
     public CarMoveScore() {

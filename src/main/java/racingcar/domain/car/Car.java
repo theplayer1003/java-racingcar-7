@@ -6,9 +6,9 @@ import java.util.Map;
 import racingcar.domain.action.ActionPolicy;
 
 public class Car {
-    private CarMoveScore score;
     private final CarName name;
     private final ActionPolicy actionPolicy;
+    private CarMoveScore score;
 
     public Car(CarName name, CarMoveScore score, ActionPolicy actionPolicy) {
         this.name = name;

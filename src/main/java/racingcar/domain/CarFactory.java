@@ -15,6 +15,6 @@ public class CarFactory {
         CarMoveScore carMoveScore = new CarMoveScore();
         ActionCondition actionCondition = new DefaultActionCondition();
         ActionPolicy actionPolicy = new DefaultActionPolicy(actionCondition);
-        return new Car(carName,carMoveScore,actionPolicy);
+        return new Car(carName, carMoveScore, actionPolicy);
     }
 }
