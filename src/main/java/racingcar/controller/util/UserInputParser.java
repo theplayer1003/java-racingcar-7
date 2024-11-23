@@ -6,11 +6,7 @@ import java.util.List;
 
 public class UserInputParser {
     public static List<String> parseCarName(String userInput) {
-        List<String> carNames = new ArrayList<>();
-
-        carNames = Arrays.asList(userInput.trim().split(","));
-
-        return carNames;
+        return Arrays.asList(userInput.trim().split(","));
     }
 
     public static int parseInteger(String userInput) {
